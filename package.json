@@ -1,6 +1,6 @@
 {
   "name": "seadanceai-transcript-sdk",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Seadance AI SDK for extracting YouTube transcripts, languages, and AI-ready summaries.",
   "type": "module",
   "main": "dist/index.cjs",
