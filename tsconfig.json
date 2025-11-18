@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "baseUrl": "./src",
+    "declaration": true,
+    "declarationDir": "./dist",
+    "outDir": "./dist",
+    "resolveJsonModule": true
+  },
+  "include": ["src"]
+}
