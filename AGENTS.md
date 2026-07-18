@@ -1,4 +1,4 @@
-# seadanceai-transcript-sdk - Typed YouTube transcript toolkit
+# seavid-ai-transcript-sdk - Typed YouTube transcript toolkit
 
 Node.js 20.19+ + TypeScript + tsup + Vitest + GitHub Actions + npm Trusted Publishing
 

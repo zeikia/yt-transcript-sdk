@@ -1,5 +1,5 @@
 {
-  "name": "seadanceai-transcript-sdk",
+  "name": "seavid-ai-transcript-sdk",
   "version": "0.2.0",
   "description": "Typed YouTube transcript toolkit for extraction, language detection, formatting, and AI-ready summaries.",
   "type": "module",
