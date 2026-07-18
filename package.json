@@ -27,11 +27,11 @@
   ],
   "homepage": "https://seavidgen.com",
   "bugs": {
-    "url": "https://github.com/zeikia/seadanceai-transcript-sdk/issues"
+    "url": "https://github.com/Oliver-Silas/yt-transcript-sdk/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zeikia/seadanceai-transcript-sdk.git"
+    "url": "git+https://github.com/Oliver-Silas/yt-transcript-sdk.git"
   },
   "funding": "https://seavidgen.com",
   "license": "MIT",

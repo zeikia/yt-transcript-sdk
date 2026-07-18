@@ -4,10 +4,10 @@
 [![npm downloads](https://img.shields.io/npm/dm/seadanceai-transcript-sdk.svg?style=flat-square)](https://www.npmjs.com/package/seadanceai-transcript-sdk)
 [![license](https://img.shields.io/npm/l/seadanceai-transcript-sdk.svg?style=flat-square&color=yellow)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-ready-2f74c0?style=flat-square&logo=typescript&logoColor=white)](#)
-[![CI](https://github.com/zeikia/seadanceai-transcript-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/zeikia/seadanceai-transcript-sdk/actions/workflows/ci.yml)
+[![CI](https://github.com/Oliver-Silas/yt-transcript-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/Oliver-Silas/yt-transcript-sdk/actions/workflows/ci.yml)
 [![Seavid AI](https://img.shields.io/badge/Sponsored%20by-Seavid%20AI-f97316?style=flat-square)](https://seavidgen.com/?ref=seadanceai-transcript-sdk)
 
-A lightweight TypeScript toolkit for fetching YouTube transcripts, probing available caption languages, exporting TXT/SRT/VTT files, and generating AI-ready summaries. The source is available on [GitHub](https://github.com/zeikia/seadanceai-transcript-sdk), and development is supported by [Seavid AI](https://seavidgen.com/?ref=seadanceai-transcript-sdk).
+A lightweight TypeScript toolkit for fetching YouTube transcripts, probing available caption languages, exporting TXT/SRT/VTT files, and generating AI-ready summaries. The source is available on [GitHub](https://github.com/Oliver-Silas/yt-transcript-sdk), and development is supported by [Seavid AI](https://seavidgen.com/?ref=seadanceai-transcript-sdk).
 
 ## ✨ Features
 
