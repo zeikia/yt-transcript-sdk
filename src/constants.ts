@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 无运行时依赖，维护第三方端点与语言展示配置
+ * [OUTPUT]: 对内提供默认转录端点、语言名称映射及探测顺序
+ * [POS]: src 的稳定配置层，被 transcript.ts 消费且不承载请求逻辑
+ * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
+ */
 export const DEFAULT_TACTIQ_ENDPOINT = 'https://tactiq-apps-prod.tactiq.io/transcript';
 
 export const LANGUAGE_DISPLAY_NAMES: Record<string, string> = {

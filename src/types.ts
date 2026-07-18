@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 依赖 axios 的请求配置类型以保持调用方配置兼容
+ * [OUTPUT]: 对外提供 SDK 全部请求、响应、格式与摘要 TypeScript 契约
+ * [POS]: src 的共享类型层，仅描述边界数据，不承载运行时行为
+ * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
+ */
 import type { AxiosRequestConfig } from 'axios';
 
 export type TranscriptFormat = 'txt' | 'srt' | 'vtt';

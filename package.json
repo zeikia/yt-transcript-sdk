@@ -1,15 +1,15 @@
 {
   "name": "seadanceai-transcript-sdk",
-  "version": "0.1.4",
-  "description": "Seadance AI SDK for extracting YouTube transcripts, languages, and AI-ready summaries.",
+  "version": "0.2.0",
+  "description": "Typed YouTube transcript toolkit for extraction, language detection, formatting, and AI-ready summaries.",
   "type": "module",
   "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
+      "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     }
   },
@@ -25,34 +25,36 @@
     "summary",
     "sdk"
   ],
-  "homepage": "https://seadanceai.com",
+  "homepage": "https://seavidgen.com",
   "bugs": {
-    "url": "https://seadanceai.com/contact"
+    "url": "https://github.com/zeikia/seadanceai-transcript-sdk/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zeikia/seadanceai-transcript-sdk.git"
   },
+  "funding": "https://seavidgen.com",
   "license": "MIT",
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
-    "lint": "eslint \"src/**/*.{ts,tsx}\"",
-    "test": "vitest run"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm test && npm run build",
+    "prepublishOnly": "npm run check"
   },
   "dependencies": {
-    "axios": "^1.8.4",
-    "youtube-transcript-js-api": "^1.4.2"
+    "axios": "^1.18.1",
+    "youtube-transcript": "^1.3.1"
   },
   "devDependencies": {
-    "@types/node": "^20.17.24",
-    "eslint": "^9.11.1",
-    "tsup": "^8.3.0",
-    "typescript": "^5.8.2",
-    "vitest": "^2.1.3"
+    "@types/node": "^20.19.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20.19.0"
   },
   "publishConfig": {
     "access": "public"

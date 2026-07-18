@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 依赖 types.ts 的片段与摘要结果契约
+ * [OUTPUT]: 对外提供无需外部模型的启发式摘要、要点与问题生成
+ * [POS]: src 的纯文本分析层，与网络抓取和文件格式化保持解耦
+ * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
+ */
 import type { SummaryQuestion, TranscriptSnippet, TranscriptSummaryOptions, TranscriptSummaryResult } from './types';
 
 const DEFAULT_TITLE = 'YouTube Video';

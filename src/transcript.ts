@@ -1,5 +1,11 @@
+/**
+ * [INPUT]: 依赖 axios、youtube-transcript、constants.ts 与公共类型契约
+ * [OUTPUT]: 对外提供双源转录抓取和候选字幕语言探测
+ * [POS]: src 的网络数据层，封装第三方服务降级与响应归一化策略
+ * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
+ */
 import axios, { type AxiosRequestConfig } from 'axios';
-import { YouTubeTranscriptApi } from 'youtube-transcript-js-api';
+import { fetchTranscript } from 'youtube-transcript';
 
 import { DEFAULT_LANGUAGE_PROBE_ORDER, DEFAULT_TACTIQ_ENDPOINT, LANGUAGE_DISPLAY_NAMES } from './constants';
 import type {
@@ -54,13 +60,13 @@ async function fetchFromTactiq(
 }
 
 async function fetchFromYoutubeAPI(videoId: string, language: string): Promise<TranscriptSnippet[]> {
-  const api = new YouTubeTranscriptApi();
-  const transcript = await api.getTranscript(`${YOUTUBE_URL_PREFIX}${videoId}`, [language, DEFAULT_LANGUAGE] as any);
+  const transcript = await fetchTranscript(videoId, { lang: language });
+  const timeDivisor = transcript.some((entry) => entry.duration >= 100) ? 1000 : 1;
 
-  return transcript.map((entry: any) => ({
+  return transcript.map((entry) => ({
     text: entry.text ?? '',
-    start: typeof entry.start === 'number' ? entry.start : entry.offset ?? 0,
-    duration: typeof entry.duration === 'number' ? entry.duration : 0
+    start: entry.offset / timeDivisor,
+    duration: entry.duration / timeDivisor
   }));
 }
 
@@ -109,7 +115,7 @@ export async function getTranscript(
       videoId,
       language,
       fallbackSnippets,
-      'youtube-transcript-js-api-backup',
+      'youtube-transcript-backup',
       Date.now() - startTime,
       'Empty result from primary'
     );
@@ -123,7 +129,7 @@ export async function getTranscript(
       videoId,
       language,
       fallbackSnippets,
-      'youtube-transcript-js-api-backup',
+      'youtube-transcript-backup',
       Date.now() - startTime,
       primaryError instanceof Error ? primaryError.message : String(primaryError)
     );

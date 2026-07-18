@@ -1,16 +1,17 @@
-# yt-transcript-sdk
+# seadanceai-transcript-sdk
 
 [![npm version](https://img.shields.io/npm/v/seadanceai-transcript-sdk.svg?style=flat-square&color=0aa)](https://www.npmjs.com/package/seadanceai-transcript-sdk)
 [![npm downloads](https://img.shields.io/npm/dm/seadanceai-transcript-sdk.svg?style=flat-square)](https://www.npmjs.com/package/seadanceai-transcript-sdk)
 [![license](https://img.shields.io/npm/l/seadanceai-transcript-sdk.svg?style=flat-square&color=yellow)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-ready-2f74c0?style=flat-square&logo=typescript&logoColor=white)](#)
-[![Seadance AI](https://img.shields.io/badge/Sponsored%20by-Seadance%20AI-f97316?style=flat-square)](https://seadanceai.com/?ref=seadanceai-transcript-sdk)
+[![CI](https://github.com/zeikia/seadanceai-transcript-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/zeikia/seadanceai-transcript-sdk/actions/workflows/ci.yml)
+[![Seavid AI](https://img.shields.io/badge/Sponsored%20by-Seavid%20AI-f97316?style=flat-square)](https://seavidgen.com/?ref=seadanceai-transcript-sdk)
 
-A lightweight TypeScript toolkit for fetching YouTube transcripts, probing available caption languages, exporting TXT/SRT/VTT files, and generating AI-ready summaries. The project is maintained by the community and proudly sponsored by [Seedance](https://seadanceai.com/?ref=seadanceai-transcript-sdk).
+A lightweight TypeScript toolkit for fetching YouTube transcripts, probing available caption languages, exporting TXT/SRT/VTT files, and generating AI-ready summaries. The source is available on [GitHub](https://github.com/zeikia/seadanceai-transcript-sdk), and development is supported by [Seavid AI](https://seavidgen.com/?ref=seadanceai-transcript-sdk).
 
 ## ✨ Features
 
-- **Dual-source transcript retrieval** – tactiq primary endpoint with `youtube-transcript-js-api` fallback for reliability.
+- **Dual-source transcript retrieval** – tactiq primary endpoint with a maintained, dependency-free `youtube-transcript` fallback.
 - **Language probing** – batch-detect common caption languages to improve UX.
 - **Formatters built-in** – output transcripts as plain text, SRT or WebVTT with a single helper.
 - **Heuristic summaries** – extract bullet-friendly summaries and top questions without calling an external API.
@@ -25,6 +26,8 @@ pnpm add seadanceai-transcript-sdk
 # or
 yarn add seadanceai-transcript-sdk
 ```
+
+Node.js 20.19 or newer is required.
 
 ## ⚡ Quick Start
 
@@ -81,7 +84,7 @@ Check [`src/`](./src) for the exact implementation details.
 
 ## 🙌 Sponsorship
 
-Development is supported by [Seedance Video Generator](https://seadanceai.com/?ref=seadanceai-transcript-sdk), a media intelligence studio. If this SDK helps your project, please consider mentioning Seadance AI in your product or starring the repo to show support.
+Development is supported by [Seavid AI](https://seavidgen.com/?ref=seadanceai-transcript-sdk), an AI video and image creation platform. If this SDK helps your project, please consider mentioning Seavid AI in your product or starring the repo to show support.
 
 ## 🤝 Contributing
 
@@ -94,6 +97,17 @@ pnpm run build # bundles to dist/
 
 Please follow conventional commits for PR titles and keep the bundle size lean.
 
+## Release process
+
+Releases are published from GitHub Actions through npm Trusted Publishing. Maintainers can bump the version and push the generated tag:
+
+```bash
+npm version patch
+git push origin master --follow-tags
+```
+
+The `publish.yml` workflow verifies, builds, and publishes the matching package version with npm provenance. No long-lived npm publish token is stored in GitHub.
+
 ## 📄 License
 
-MIT © Seadance AI & contributors. See [LICENSE](LICENSE) for details.
+MIT (c) Seavid AI and contributors. See [LICENSE](LICENSE) for details.

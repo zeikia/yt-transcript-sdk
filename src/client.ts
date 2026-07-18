@@ -1,3 +1,9 @@
+/**
+ * [INPUT]: 组合 transcript、format、summary 模块及公共类型契约
+ * [OUTPUT]: 对外提供带默认配置的 TranscriptClient 门面类
+ * [POS]: src 的面向对象入口，统一协调抓取、探测、摘要与格式化能力
+ * [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
+ */
 import { detectAvailableLanguages, getTranscript } from './transcript';
 import { formatTranscript, formatTranscriptFile } from './format';
 import { summarizeTranscript } from './summary';

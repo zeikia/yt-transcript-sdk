@@ -1,0 +1,29 @@
+# [INPUT]: 依赖仓库源码、package-lock.json 与 npm check 脚本
+# [OUTPUT]: 为 push 与 pull request 提供跨 Node.js 版本的构建质量门禁
+# [POS]: GitHub Actions 持续集成入口，不持有写权限或发布凭据
+# [PROTOCOL]: 变更时更新此头部，然后检查 AGENTS.md
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - run: npm ci
+      - run: npm run check
